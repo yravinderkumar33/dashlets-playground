@@ -1,9 +1,7 @@
 import { HttpClient } from "@angular/common/http";
-import { of } from "rxjs";
-import { tap } from "rxjs/operators";
 import { IDataService } from "sb-dashlets/lib";
 
-export class DataService implements IDataService {
+export class DruidDataService implements IDataService {
 
     constructor(private httpClient: HttpClient) { }
 

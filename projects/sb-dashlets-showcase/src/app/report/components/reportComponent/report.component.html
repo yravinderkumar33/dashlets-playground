@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="row">
+        <div class="alert alert-primary mt-4" role="alert">
+            Explore Content Playback on Mobile and Portal Devices in the State of Uttar Pradesh
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <app-big-number [sql]="totalPlaysInApp" [operation]="'MIN'" [header]="'Total Plays (App)'"
+                [dataExpr]="'Total Plays'"> </app-big-number>
+        </div>
+        <div class="col">
+            <app-big-number [sql]="totalPlaysInPortal" [operation]="'SUM'" [header]="'Total Plays (Portal)'"
+                [dataExpr]="'Total Plays'"> </app-big-number>
+        </div>
+        <div class="col">
+            <app-big-number [sql]="totalPlaysInApp" [operation]="'SUM'" [header]="'Total Devices (App)'"
+                [dataExpr]="'Total Devices'"> </app-big-number>
+        </div>
+        <div class="col">
+            <app-big-number [sql]="totalPlaysInPortal" [operation]="'SUM'" [header]="'Total Devices (Portal)'"
+                [dataExpr]="'Total Devices'"> </app-big-number>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    District Wise Content Plays From Portal
+                </div>
+                <div class="card-body">
+                    <app-content-plays-by-portal [type]="'line'"></app-content-plays-by-portal>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    District Wise Device Count From Portal
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <app-total-devices [type]="'line'" [sql]="totalPlaysInPortal"></app-total-devices>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    District Wise Content Plays From App
+                </div>
+                <div class="card-body">
+                    <app-content-plays-by-app [type]="'bar'"></app-content-plays-by-app>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    District Wise Device Count From App
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <app-total-devices [type]="'bar'" [sql]="totalPlaysInApp"></app-total-devices>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    All Data
+                </div>
+                <div class="card-body">
+                    <app-table></app-table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-header">
+                    Map
+                </div>
+                <div class="card-body">
+                    <app-map></app-map>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+<sb-dashlet [type]="type" [data]="httpData" [config]="config" (events)="handleEvent($event)" #lib2>
+
+    <ng-template sbTemplateRef="header" let-config>
+        <div role="alert">
+            Custom Alerts
+        </div>
+      </ng-template>
+
+</sb-dashlet>
